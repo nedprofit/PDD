@@ -1,0 +1,18 @@
+<div class="container">
+  <% if @survey.nil? %>
+    <p>
+      Этот тест больше не доступен.
+    </p>
+  <% elsif @survey.avaliable_for_participant?(@participant) %>
+    <%= render 'form' %>
+  <% else %>
+    <p>
+      Вы потратили все возможные попытки для этого теста.
+    </p>
+    <p>
+      <%= link_to delete_user_attempts_path(@survey.id, session[:user_id]), method: :delete do %>
+        Кликните здесь, чтобы сбросить ваши попытки.
+      <% end %>
+    </p>
+  <% end -%>
+</div>

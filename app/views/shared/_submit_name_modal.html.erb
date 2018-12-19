@@ -1,0 +1,23 @@
+<div id="submit-name-modal" class="modal fade" data-new-user="<%= !current_user %>">
+  <%= user_form do |f| %>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h4> <%= f.label :name, 'Как тебя зовут?' %> </h4>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+            <span class="help-block">Это ваше имя пользователя. Оно будет связано с каждым участием в опросе, которое вы прошли.</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit 'Зарегистрироваться', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
